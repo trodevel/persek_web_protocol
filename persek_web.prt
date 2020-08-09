@@ -1,0 +1,193 @@
+############################################################
+#
+# Persek Protocol Web messages.
+#
+# Copyright (C) 2017 Sergey Kolevatov
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+
+# $Revision: 13434 $ $Date:: 2020-08-08 #$ $Author: serge $
+
+############################################################
+
+protocol persek_web
+
+############################################################
+
+base persek_protocol
+
+use generic_protocol
+use basic_objects
+use dtmf_tools
+use lang_tools
+
+############################################################
+
+extern generic_protocol::BackwardMessage
+extern persek_protocol::Request string
+extern persek_protocol::BackwardMessage
+
+############################################################
+
+obj Reminder
+
+    uint32                      msg_templ_id
+    uint32                      feedback_templ_id
+    o basic_objects::LocalTime  effective_time         # local time
+    uint32                      remind_period          # remind period in min
+    map<string, string>         params
+    map<e dtmf_tools::tone_e, o persek_protocol::ReminderAction> actions
+
+    o persek_protocol::ReminderOptions           options
+
+obj_end
+
+msg GetReminderStatusRequest: persek_protocol::Request
+
+
+    uint32                          user_id
+
+    string                          search_filter
+
+    o basic_objects::LocalTimeRange effective_date_time_range
+
+    uint32                          page_size
+    uint32                          page_number
+    e lang_tools::lang_e            lang
+
+msg_end
+
+enum ReminderStatus_state_e
+
+    IDLE                    = 0
+    ACTIVE                  = 1
+    COMPLETED_OK            = 2
+    COMPLETED_FAILED        = 3
+    WAITING_REDIAL_TIMER    = 4
+
+enum_end
+
+obj ReminderStatus
+
+    uint32                      job_id
+    e ReminderStatus_state_e    state
+    uint32                      feedback
+    o basic_objects::LocalTime  effective_time
+    uint32                      current_try
+    o basic_objects::LocalTime  last_update_time
+    o basic_objects::LocalTime  next_exec_time
+    uint32                      contact_id
+    string                      salutation
+    string                      name
+    string                      first_name
+    uint32                      contact_phone_id
+    string                      phone_number
+    string                      template_localized_name
+
+obj_end
+
+msg GetReminderStatusResponse: generic_protocol::BackwardMessage
+
+    uint32                      total_size # total number of found statuses
+    array<o ReminderStatus>     statuses
+
+msg_end
+
+msg FindContactsRequest: persek_protocol::Request
+
+    uint32                      user_id
+
+    string                      search_filter
+
+    uint32                      page_size
+    uint32                      page_number
+    e lang_tools::lang_e        lang
+
+msg_end
+
+obj Contact
+
+    uint32                  user_id
+    uint32                  contact_id
+    string                  salutation
+    string                  name
+    string                  first_name
+    o basic_objects::Date   birthday
+    string                  notice
+    uint32                  landline_contact_phone_id
+    string                  landline_contact_phone
+    uint32                  mobile_contact_phone_id
+    string                  mobile_contact_phone
+
+obj_end
+
+msg FindContactsResponse: generic_protocol::BackwardMessage
+
+    uint32                  total_size # total number of found contacts
+    array<o Contact>        contacts
+
+msg_end
+
+msg GetContactRequest: persek_protocol::Request
+
+    uint32                  contact_id
+    e lang_tools::lang_e    lang
+msg_end
+
+msg GetContactResponse: generic_protocol::BackwardMessage
+
+    o Contact               contact
+
+msg_end
+
+msg AddReminderRequest: persek_protocol::Request
+
+    uint32          contact_phone_id
+    o persek_protocol::Reminder      reminder
+
+msg_end
+
+msg AddReminderResponse: generic_protocol::BackwardMessage
+
+    uint32          job_id
+
+msg_end
+
+msg ModifyReminderRequest: persek_protocol::Request
+
+    uint32          job_id
+    uint32          contact_phone_id
+    o persek_protocol::Reminder      reminder
+
+msg_end
+
+msg ModifyReminderResponse: generic_protocol::BackwardMessage
+
+msg_end
+
+msg GetReminderRequest: persek_protocol::Request
+
+    uint32                  job_id
+
+msg_end
+
+msg GetReminderResponse: generic_protocol::BackwardMessage
+
+    uint32                  contact_id
+    uint32                  contact_phone_id
+    string                  contact_phone
+    o persek_protocol::Reminder              reminder
+
+msg_end
