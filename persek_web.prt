@@ -18,7 +18,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-# $Revision: 13434 $ $Date:: 2020-08-08 #$ $Author: serge $
+# $Revision: 13480 $ $Date:: 2020-08-12 #$ $Author: serge $
 
 ############################################################
 
@@ -155,7 +155,7 @@ msg_end
 msg AddReminderRequest: persek_protocol::Request
 
     uint32          contact_phone_id
-    o persek_protocol::Reminder      reminder
+    o Reminder      reminder
 
 msg_end
 
@@ -169,7 +169,7 @@ msg ModifyReminderRequest: persek_protocol::Request
 
     uint32          job_id
     uint32          contact_phone_id
-    o persek_protocol::Reminder      reminder
+    o Reminder      reminder
 
 msg_end
 
@@ -188,6 +188,6 @@ msg GetReminderResponse: generic_protocol::BackwardMessage
     uint32                  contact_id
     uint32                  contact_phone_id
     string                  contact_phone
-    o persek_protocol::Reminder              reminder
+    o Reminder              reminder
 
 msg_end
