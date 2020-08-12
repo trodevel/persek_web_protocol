@@ -178,7 +178,7 @@ function to_generic_request__AddReminderRequest( & $r )
     $res .= \persek_protocol\to_generic_request__Request( $r );
 
     $res .= "&" . \basic_parser\to_generic_request__int( "CONTACT_PHONE_ID", $r->contact_phone_id );
-    $res .= "&" . \persek_protocol\to_generic_request__Reminder( "REMINDER", $r->reminder );
+    $res .= "&" . to_generic_request__Reminder( "REMINDER", $r->reminder );
 
     return $res;
 }
@@ -206,7 +206,7 @@ function to_generic_request__ModifyReminderRequest( & $r )
 
     $res .= "&" . \basic_parser\to_generic_request__int( "JOB_ID", $r->job_id );
     $res .= "&" . \basic_parser\to_generic_request__int( "CONTACT_PHONE_ID", $r->contact_phone_id );
-    $res .= "&" . \persek_protocol\to_generic_request__Reminder( "REMINDER", $r->reminder );
+    $res .= "&" . to_generic_request__Reminder( "REMINDER", $r->reminder );
 
     return $res;
 }
@@ -247,7 +247,7 @@ function to_generic_request__GetReminderResponse( & $r )
     $res .= "&" . \basic_parser\to_generic_request__int( "CONTACT_ID", $r->contact_id );
     $res .= "&" . \basic_parser\to_generic_request__int( "CONTACT_PHONE_ID", $r->contact_phone_id );
     $res .= "&" . \basic_parser\to_generic_request__string( "CONTACT_PHONE", $r->contact_phone );
-    $res .= "&" . \persek_protocol\to_generic_request__Reminder( "REMINDER", $r->reminder );
+    $res .= "&" . to_generic_request__Reminder( "REMINDER", $r->reminder );
 
     return $res;
 }

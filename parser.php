@@ -188,7 +188,7 @@ function parse__AddReminderRequest( & $csv_arr )
     \persek_protocol\parse__Request( $res, $csv_arr, $offset );
 
     $res->contact_phone_id = \basic_parser\parse__int( $csv_arr, $offset );
-    $res->reminder = \persek_protocol\parse__Reminder( $csv_arr, $offset );
+    $res->reminder = parse__Reminder( $csv_arr, $offset );
 
     return $res;
 }
@@ -218,7 +218,7 @@ function parse__ModifyReminderRequest( & $csv_arr )
 
     $res->job_id = \basic_parser\parse__int( $csv_arr, $offset );
     $res->contact_phone_id = \basic_parser\parse__int( $csv_arr, $offset );
-    $res->reminder = \persek_protocol\parse__Reminder( $csv_arr, $offset );
+    $res->reminder = parse__Reminder( $csv_arr, $offset );
 
     return $res;
 }
@@ -262,7 +262,7 @@ function parse__GetReminderResponse( & $csv_arr )
     $res->contact_id = \basic_parser\parse__int( $csv_arr, $offset );
     $res->contact_phone_id = \basic_parser\parse__int( $csv_arr, $offset );
     $res->contact_phone = \basic_parser\parse__string( $csv_arr, $offset );
-    $res->reminder = \persek_protocol\parse__Reminder( $csv_arr, $offset );
+    $res->reminder = parse__Reminder( $csv_arr, $offset );
 
     return $res;
 }

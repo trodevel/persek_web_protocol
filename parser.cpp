@@ -150,7 +150,7 @@ void get_value_or_throw( AddReminderRequest * res, const generic_request::Reques
     ::persek_protocol::parser::get_value_or_throw( static_cast<persek_protocol::Request*>( res ), r );
 
     get_value_or_throw( & res->contact_phone_id, "CONTACT_PHONE_ID", r );
-    ::persek_protocol::parser::get_value_or_throw( & res->reminder, "REMINDER", r );
+    get_value_or_throw( & res->reminder, "REMINDER", r );
 }
 
 void get_value_or_throw( AddReminderResponse * res, const generic_request::Request & r )
@@ -168,7 +168,7 @@ void get_value_or_throw( ModifyReminderRequest * res, const generic_request::Req
 
     get_value_or_throw( & res->job_id, "JOB_ID", r );
     get_value_or_throw( & res->contact_phone_id, "CONTACT_PHONE_ID", r );
-    ::persek_protocol::parser::get_value_or_throw( & res->reminder, "REMINDER", r );
+    get_value_or_throw( & res->reminder, "REMINDER", r );
 }
 
 void get_value_or_throw( ModifyReminderResponse * res, const generic_request::Request & r )
@@ -194,7 +194,7 @@ void get_value_or_throw( GetReminderResponse * res, const generic_request::Reque
     get_value_or_throw( & res->contact_id, "CONTACT_ID", r );
     get_value_or_throw( & res->contact_phone_id, "CONTACT_PHONE_ID", r );
     get_value_or_throw( & res->contact_phone, "CONTACT_PHONE", r );
-    ::persek_protocol::parser::get_value_or_throw( & res->reminder, "REMINDER", r );
+    get_value_or_throw( & res->reminder, "REMINDER", r );
 }
 
 // to object

@@ -184,7 +184,7 @@ void initialize( GetContactResponse * res
 void initialize( AddReminderRequest * res
     , const std::string &  base_class_param_1
     , uint32_t contact_phone_id
-    , const persek_protocol::Reminder &  reminder
+    , const Reminder &  reminder
  )
 {
     // base class
@@ -208,7 +208,7 @@ void initialize( ModifyReminderRequest * res
     , const std::string &  base_class_param_1
     , uint32_t job_id
     , uint32_t contact_phone_id
-    , const persek_protocol::Reminder &  reminder
+    , const Reminder &  reminder
  )
 {
     // base class
@@ -242,7 +242,7 @@ void initialize( GetReminderResponse * res
     , uint32_t contact_id
     , uint32_t contact_phone_id
     , const std::string &  contact_phone
-    , const persek_protocol::Reminder &  reminder
+    , const Reminder &  reminder
  )
 {
     // base class
@@ -340,7 +340,7 @@ GetContactResponse * create_GetContactResponse(
 AddReminderRequest * create_AddReminderRequest(
     const std::string &  base_class_param_1
     , uint32_t contact_phone_id
-    , const persek_protocol::Reminder &  reminder
+    , const Reminder &  reminder
  )
 {
     auto * res = new AddReminderRequest;
@@ -365,7 +365,7 @@ ModifyReminderRequest * create_ModifyReminderRequest(
     const std::string &  base_class_param_1
     , uint32_t job_id
     , uint32_t contact_phone_id
-    , const persek_protocol::Reminder &  reminder
+    , const Reminder &  reminder
  )
 {
     auto * res = new ModifyReminderRequest;
@@ -401,7 +401,7 @@ GetReminderResponse * create_GetReminderResponse(
     uint32_t contact_id
     , uint32_t contact_phone_id
     , const std::string &  contact_phone
-    , const persek_protocol::Reminder &  reminder
+    , const Reminder &  reminder
  )
 {
     auto * res = new GetReminderResponse;

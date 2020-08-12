@@ -178,7 +178,7 @@ function to_string__AddReminderRequest( & $r )
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " contact_phone_id=" . \basic_parser\to_string__int( $r->contact_phone_id );
-    $res .= " reminder=" . \persek_protocol\to_string__Reminder( $r->reminder );
+    $res .= " reminder=" . to_string__Reminder( $r->reminder );
 
     return $res;
 }
@@ -200,7 +200,7 @@ function to_string__ModifyReminderRequest( & $r )
 
     $res .= " job_id=" . \basic_parser\to_string__int( $r->job_id );
     $res .= " contact_phone_id=" . \basic_parser\to_string__int( $r->contact_phone_id );
-    $res .= " reminder=" . \persek_protocol\to_string__Reminder( $r->reminder );
+    $res .= " reminder=" . to_string__Reminder( $r->reminder );
 
     return $res;
 }
@@ -232,7 +232,7 @@ function to_string__GetReminderResponse( & $r )
     $res .= " contact_id=" . \basic_parser\to_string__int( $r->contact_id );
     $res .= " contact_phone_id=" . \basic_parser\to_string__int( $r->contact_phone_id );
     $res .= " contact_phone=" . \basic_parser\to_string__string( $r->contact_phone );
-    $res .= " reminder=" . \persek_protocol\to_string__Reminder( $r->reminder );
+    $res .= " reminder=" . to_string__Reminder( $r->reminder );
 
     return $res;
 }

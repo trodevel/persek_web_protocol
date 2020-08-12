@@ -182,7 +182,7 @@ function initialize__GetContactResponse( & $res
 function initialize__AddReminderRequest( & $res
     , $base_class_param_1 // string
     , $contact_phone_id // uint32_t
-    , $reminder // persek_protocol\Reminder
+    , $reminder // Reminder
  )
 {
     // base class
@@ -206,7 +206,7 @@ function initialize__ModifyReminderRequest( & $res
     , $base_class_param_1 // string
     , $job_id // uint32_t
     , $contact_phone_id // uint32_t
-    , $reminder // persek_protocol\Reminder
+    , $reminder // Reminder
  )
 {
     // base class
@@ -240,7 +240,7 @@ function initialize__GetReminderResponse( & $res
     , $contact_id // uint32_t
     , $contact_phone_id // uint32_t
     , $contact_phone // string
-    , $reminder // persek_protocol\Reminder
+    , $reminder // Reminder
  )
 {
     // base class
@@ -402,7 +402,7 @@ function create__GetContactResponse(
 function create__AddReminderRequest(
     $base_class_param_1 // string
     , $contact_phone_id // uint32_t
-    , $reminder // persek_protocol\Reminder
+    , $reminder // Reminder
  )
 {
     $res = new AddReminderRequest;
@@ -427,7 +427,7 @@ function create__ModifyReminderRequest(
     $base_class_param_1 // string
     , $job_id // uint32_t
     , $contact_phone_id // uint32_t
-    , $reminder // persek_protocol\Reminder
+    , $reminder // Reminder
  )
 {
     $res = new ModifyReminderRequest;
@@ -463,7 +463,7 @@ function create__GetReminderResponse(
     $contact_id // uint32_t
     , $contact_phone_id // uint32_t
     , $contact_phone // string
-    , $reminder // persek_protocol\Reminder
+    , $reminder // Reminder
  )
 {
     $res = new GetReminderResponse;

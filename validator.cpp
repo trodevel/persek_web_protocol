@@ -159,7 +159,7 @@ bool validate( const AddReminderRequest & r )
     ::persek_protocol::validator::validate( static_cast<const persek_protocol::Request&>( r ) );
 
     validate( "CONTACT_PHONE_ID", r.contact_phone_id );
-    ::persek_protocol::validator::validate( "REMINDER", r.reminder );
+    validate( "REMINDER", r.reminder );
 
     return true;
 }
@@ -181,7 +181,7 @@ bool validate( const ModifyReminderRequest & r )
 
     validate( "JOB_ID", r.job_id );
     validate( "CONTACT_PHONE_ID", r.contact_phone_id );
-    ::persek_protocol::validator::validate( "REMINDER", r.reminder );
+    validate( "REMINDER", r.reminder );
 
     return true;
 }
@@ -213,7 +213,7 @@ bool validate( const GetReminderResponse & r )
     validate( "CONTACT_ID", r.contact_id );
     validate( "CONTACT_PHONE_ID", r.contact_phone_id );
     validate( "CONTACT_PHONE", r.contact_phone ); // String
-    ::persek_protocol::validator::validate( "REMINDER", r.reminder );
+    validate( "REMINDER", r.reminder );
 
     return true;
 }

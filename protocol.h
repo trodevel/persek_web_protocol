@@ -162,7 +162,7 @@ struct AddReminderRequest: public persek_protocol::Request
     };
 
     uint32_t             contact_phone_id;
-    persek_protocol::Reminder reminder  ;
+    Reminder             reminder  ;
 };
 
 // Message
@@ -186,7 +186,7 @@ struct ModifyReminderRequest: public persek_protocol::Request
 
     uint32_t             job_id    ;
     uint32_t             contact_phone_id;
-    persek_protocol::Reminder reminder  ;
+    Reminder             reminder  ;
 };
 
 // Message
@@ -220,7 +220,7 @@ struct GetReminderResponse: public generic_protocol::BackwardMessage
     uint32_t             contact_id;
     uint32_t             contact_phone_id;
     std::string          contact_phone;
-    persek_protocol::Reminder reminder  ;
+    Reminder             reminder  ;
 };
 
 } // namespace persek_web_protocol

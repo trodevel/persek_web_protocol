@@ -168,7 +168,7 @@ class AddReminderRequest extends \persek_protocol\Request
     const MESSAGE_ID = 1716890514;
 
     public $contact_phone_id    ; // type: uint32_t
-    public $reminder            ; // type: persek_protocol\Reminder
+    public $reminder            ; // type: Reminder
 };
 
 // Message
@@ -196,7 +196,7 @@ class ModifyReminderRequest extends \persek_protocol\Request
 
     public $job_id              ; // type: uint32_t
     public $contact_phone_id    ; // type: uint32_t
-    public $reminder            ; // type: persek_protocol\Reminder
+    public $reminder            ; // type: Reminder
 };
 
 // Message
@@ -236,7 +236,7 @@ class GetReminderResponse extends \generic_protocol\BackwardMessage
     public $contact_id          ; // type: uint32_t
     public $contact_phone_id    ; // type: uint32_t
     public $contact_phone       ; // type: string
-    public $reminder            ; // type: persek_protocol\Reminder
+    public $reminder            ; // type: Reminder
 };
 
 # namespace_end persek_web_protocol

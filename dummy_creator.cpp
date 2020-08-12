@@ -177,7 +177,7 @@ AddReminderRequest * create__AddReminderRequest()
     ::persek_web_protocol::initialize( res
         , ::basic_parser::dummy::create__string()
         , ::basic_parser::dummy::create__uint32()
-        , ::persek_protocol::dummy::create__Reminder()
+        , dummy::create__Reminder()
         );
 
     return res;
@@ -202,7 +202,7 @@ ModifyReminderRequest * create__ModifyReminderRequest()
         , ::basic_parser::dummy::create__string()
         , ::basic_parser::dummy::create__uint32()
         , ::basic_parser::dummy::create__uint32()
-        , ::persek_protocol::dummy::create__Reminder()
+        , dummy::create__Reminder()
         );
 
     return res;
@@ -238,7 +238,7 @@ GetReminderResponse * create__GetReminderResponse()
         , ::basic_parser::dummy::create__uint32()
         , ::basic_parser::dummy::create__uint32()
         , ::basic_parser::dummy::create__string()
-        , ::persek_protocol::dummy::create__Reminder()
+        , dummy::create__Reminder()
         );
 
     return res;

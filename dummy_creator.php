@@ -166,7 +166,7 @@ function create_dummy__AddReminderRequest()
     initialize__AddReminderRequest( $res
         , \basic_parser\create_dummy__string()
         , \basic_parser\create_dummy__int32()
-        , \persek_protocol\create_dummy__Reminder()
+        , create_dummy__Reminder()
         );
     return $res;
 }
@@ -189,7 +189,7 @@ function create_dummy__ModifyReminderRequest()
         , \basic_parser\create_dummy__string()
         , \basic_parser\create_dummy__int32()
         , \basic_parser\create_dummy__int32()
-        , \persek_protocol\create_dummy__Reminder()
+        , create_dummy__Reminder()
         );
     return $res;
 }
@@ -222,7 +222,7 @@ function create_dummy__GetReminderResponse()
         , \basic_parser\create_dummy__int32()
         , \basic_parser\create_dummy__int32()
         , \basic_parser\create_dummy__string()
-        , \persek_protocol\create_dummy__Reminder()
+        , create_dummy__Reminder()
         );
     return $res;
 }

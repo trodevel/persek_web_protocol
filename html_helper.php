@@ -201,7 +201,7 @@ function to_html__AddReminderRequest( & $r )
     $data = array(
         \persek_protocol\to_html__Request( $r ),
         \basic_parser\to_html__int( $r->contact_phone_id ),
-        \persek_protocol\to_html__Reminder( $r->reminder )
+        to_html__Reminder( $r->reminder )
         );
 
     $res = \basic_parser\to_html_table( $header, $data );
@@ -231,7 +231,7 @@ function to_html__ModifyReminderRequest( & $r )
         \persek_protocol\to_html__Request( $r ),
         \basic_parser\to_html__int( $r->job_id ),
         \basic_parser\to_html__int( $r->contact_phone_id ),
-        \persek_protocol\to_html__Reminder( $r->reminder )
+        to_html__Reminder( $r->reminder )
         );
 
     $res = \basic_parser\to_html_table( $header, $data );
@@ -275,7 +275,7 @@ function to_html__GetReminderResponse( & $r )
         \basic_parser\to_html__int( $r->contact_id ),
         \basic_parser\to_html__int( $r->contact_phone_id ),
         \basic_parser\to_html__string( $r->contact_phone ),
-        \persek_protocol\to_html__Reminder( $r->reminder )
+        to_html__Reminder( $r->reminder )
         );
 
     $res = \basic_parser\to_html_table( $header, $data );

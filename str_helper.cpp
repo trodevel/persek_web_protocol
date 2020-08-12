@@ -191,7 +191,7 @@ std::ostream & write( std::ostream & os, const AddReminderRequest & r )
     ::persek_protocol::str_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
 
     os << " contact_phone_id="; write( os, r.contact_phone_id );
-    os << " reminder="; ::persek_protocol::str_helper::write( os, r.reminder );
+    os << " reminder="; write( os, r.reminder );
 
     return os;
 }
@@ -213,7 +213,7 @@ std::ostream & write( std::ostream & os, const ModifyReminderRequest & r )
 
     os << " job_id="; write( os, r.job_id );
     os << " contact_phone_id="; write( os, r.contact_phone_id );
-    os << " reminder="; ::persek_protocol::str_helper::write( os, r.reminder );
+    os << " reminder="; write( os, r.reminder );
 
     return os;
 }
@@ -245,7 +245,7 @@ std::ostream & write( std::ostream & os, const GetReminderResponse & r )
     os << " contact_id="; write( os, r.contact_id );
     os << " contact_phone_id="; write( os, r.contact_phone_id );
     os << " contact_phone="; write( os, r.contact_phone );
-    os << " reminder="; ::persek_protocol::str_helper::write( os, r.reminder );
+    os << " reminder="; write( os, r.reminder );
 
     return os;
 }

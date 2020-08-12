@@ -177,7 +177,7 @@ std::ostream & write( std::ostream & os, const AddReminderRequest & r )
     ::persek_protocol::csv_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
 
     write( os, r.contact_phone_id );
-    ::persek_protocol::csv_helper::write( os, r.reminder );
+    write( os, r.reminder );
 
     return os;
 }
@@ -203,7 +203,7 @@ std::ostream & write( std::ostream & os, const ModifyReminderRequest & r )
 
     write( os, r.job_id );
     write( os, r.contact_phone_id );
-    ::persek_protocol::csv_helper::write( os, r.reminder );
+    write( os, r.reminder );
 
     return os;
 }
@@ -241,7 +241,7 @@ std::ostream & write( std::ostream & os, const GetReminderResponse & r )
     write( os, r.contact_id );
     write( os, r.contact_phone_id );
     write( os, r.contact_phone );
-    ::persek_protocol::csv_helper::write( os, r.reminder );
+    write( os, r.reminder );
 
     return os;
 }

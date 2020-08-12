@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-// $Revision: 9195 $ $Date:: 2018-05-15 #$ $Author: serge $
+// $Revision: 13447 $ $Date:: 2020-08-11 #$ $Author: serge $
 
 namespace persek_protocol\web;
 
@@ -29,7 +29,7 @@ require_once __DIR__.'/../php_snippets/convert_csv_to_array.php';   // convert_c
 require_once __DIR__.'/../php_snippets/nonascii_hex_codec.php';     // \utils\nonascii_hex_codec\decode()
 require_once __DIR__.'/../generic_protocol/response_parser.php';    // generic_protocol\create_parse_error()
 require_once __DIR__.'/../persek_protocol/response_parser.php';     // persek_protocol\get_response_type()
-require_once 'persek_protocol_web.php';
+require_once 'persek_web_protocol.php';
 
 function parse_Reminder( & $csv_arr, & $offset )
 {
