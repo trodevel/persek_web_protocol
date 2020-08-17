@@ -37,6 +37,9 @@ std::ostream & write( std::ostream & os, const ModifyReminderResponse & r );
 std::ostream & write( std::ostream & os, const GetReminderRequest & r );
 std::ostream & write( std::ostream & os, const GetReminderResponse & r );
 
+// generic
+std::ostream & write( std::ostream & os, const basic_parser::Object & r );
+
 template<class T>
 std::string to_csv( const T & l )
 {
@@ -46,9 +49,6 @@ std::string to_csv( const T & l )
 
     return os.str();
 }
-
-// generic
-std::ostream & write( std::ostream & os, const basic_parser::Object & r );
 
 } // namespace csv_helper
 
