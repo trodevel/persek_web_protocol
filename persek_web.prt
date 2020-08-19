@@ -18,7 +18,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-# $Revision: 13480 $ $Date:: 2020-08-12 #$ $Author: serge $
+# $Revision: 13523 $ $Date:: 2020-08-19 #$ $Author: serge $
 
 ############################################################
 
@@ -30,8 +30,8 @@ base persek_protocol
 
 use generic_protocol
 use basic_objects
-use dtmf_tools
-use lang_tools
+use dtmf_tools_protocol
+use lang_tools_protocol
 
 ############################################################
 
