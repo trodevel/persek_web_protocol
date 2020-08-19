@@ -6,8 +6,8 @@
 #include "persek_protocol/str_helper.h"
 #include "generic_protocol/str_helper.h"
 #include "basic_objects/str_helper.h"
-#include "dtmf_tools/str_helper.h"
-#include "lang_tools/str_helper.h"
+#include "dtmf_tools_protocol/str_helper.h"
+#include "lang_tools_protocol/str_helper.h"
 #include "basic_parser/str_helper.h"
 
 namespace persek_web_protocol

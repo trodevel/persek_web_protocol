@@ -7,8 +7,8 @@ namespace persek_web_protocol;
 require_once __DIR__.'/../persek_protocol/html_helper.php';
 require_once __DIR__.'/../generic_protocol/html_helper.php';
 require_once __DIR__.'/../basic_objects/html_helper.php';
-require_once __DIR__.'/../dtmf_tools/html_helper.php';
-require_once __DIR__.'/../lang_tools/html_helper.php';
+require_once __DIR__.'/../dtmf_tools_protocol/html_helper.php';
+require_once __DIR__.'/../lang_tools_protocol/html_helper.php';
 require_once __DIR__.'/../basic_parser/html_helper.php';
 require_once 'str_helper.php';
 

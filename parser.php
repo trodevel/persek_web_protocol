@@ -7,8 +7,8 @@ namespace persek_web_protocol;
 require_once __DIR__.'/../persek_protocol/parser.php';
 require_once __DIR__.'/../generic_protocol/parser.php';
 require_once __DIR__.'/../basic_objects/parser.php';
-require_once __DIR__.'/../dtmf_tools/parser.php';
-require_once __DIR__.'/../lang_tools/parser.php';
+require_once __DIR__.'/../dtmf_tools_protocol/parser.php';
+require_once __DIR__.'/../lang_tools_protocol/parser.php';
 require_once __DIR__.'/../basic_parser/parser.php';
 
 // enums

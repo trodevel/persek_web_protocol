@@ -3,8 +3,8 @@
 #include "persek_protocol/validator.h"
 #include "generic_protocol/validator.h"
 #include "basic_objects/validator.h"
-#include "dtmf_tools/validator.h"
-#include "lang_tools/validator.h"
+#include "dtmf_tools_protocol/validator.h"
+#include "lang_tools_protocol/validator.h"
 #include "basic_parser/validator.h"
 
 namespace persek_web_protocol

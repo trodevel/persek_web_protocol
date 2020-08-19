@@ -10,8 +10,8 @@ require_once __DIR__.'/../persek_protocol/protocol.php';
 // includes for used modules
 require_once __DIR__.'/../generic_protocol/protocol.php';
 require_once __DIR__.'/../basic_objects/protocol.php';
-require_once __DIR__.'/../dtmf_tools/protocol.php';
-require_once __DIR__.'/../lang_tools/protocol.php';
+require_once __DIR__.'/../dtmf_tools_protocol/protocol.php';
+require_once __DIR__.'/../lang_tools_protocol/protocol.php';
 
 // Enum ReminderStatus_state_e
 const ReminderStatus_state_e__IDLE                 = 0;
