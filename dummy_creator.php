@@ -16,7 +16,11 @@ require_once 'object_initializer.php';
 
 function create_dummy__ReminderStatus_state_e()
 {
-    $res = ReminderStatus_state_e__IDLE;
+    $SIZE = 5;
+
+    $values = array( ReminderStatus_state_e__IDLE, ReminderStatus_state_e__ACTIVE, ReminderStatus_state_e__COMPLETED_OK, ReminderStatus_state_e__COMPLETED_FAILED, ReminderStatus_state_e__WAITING_REDIAL_TIMER,  );
+
+    $res = $values[ \basic_parser\create_dummy__int32() % $SIZE ];
 
     return $res;
 }

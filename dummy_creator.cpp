@@ -18,7 +18,11 @@ namespace dummy
 
 ReminderStatus_state_e create__ReminderStatus_state_e()
 {
-    auto res = ReminderStatus_state_e::IDLE;
+    static const unsigned SIZE = 5;
+
+    static const ReminderStatus_state_e values[SIZE] = { ReminderStatus_state_e::IDLE, ReminderStatus_state_e::ACTIVE, ReminderStatus_state_e::COMPLETED_OK, ReminderStatus_state_e::COMPLETED_FAILED, ReminderStatus_state_e::WAITING_REDIAL_TIMER,  };
+
+    auto res = values[ ::basic_parser::dummy::create__uint32() % SIZE ];
 
     return res;
 }
