@@ -275,7 +275,7 @@ class Parser extends \persek_protocol\Parser
 protected static function parse_csv_array( $csv_arr )
 {
     if( sizeof( $csv_arr ) < 1 )
-        return self::create_parse_error();
+        return NULL;
 
     $handler_map = array(
         // messages

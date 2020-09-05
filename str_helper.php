@@ -36,7 +36,9 @@ function to_string__ReminderStatus_state_e( $r )
 
 function to_string__Reminder( & $r )
 {
-    $res = "";    $res .= "(";
+    $res = "";
+
+    $res .= "(";
 
     $res .= " msg_templ_id=" . \basic_parser\to_string__int( $r->msg_templ_id );
     $res .= " feedback_templ_id=" . \basic_parser\to_string__int( $r->feedback_templ_id );
@@ -53,7 +55,9 @@ function to_string__Reminder( & $r )
 
 function to_string__ReminderStatus( & $r )
 {
-    $res = "";    $res .= "(";
+    $res = "";
+
+    $res .= "(";
 
     $res .= " job_id=" . \basic_parser\to_string__int( $r->job_id );
     $res .= " state=" . to_string__ReminderStatus_state_e( $r->state );
@@ -77,7 +81,9 @@ function to_string__ReminderStatus( & $r )
 
 function to_string__Contact( & $r )
 {
-    $res = "";    $res .= "(";
+    $res = "";
+
+    $res .= "(";
 
     $res .= " user_id=" . \basic_parser\to_string__int( $r->user_id );
     $res .= " contact_id=" . \basic_parser\to_string__int( $r->contact_id );
@@ -102,7 +108,9 @@ function to_string__Contact( & $r )
 
 function to_string__GetReminderStatusRequest( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " user_id=" . \basic_parser\to_string__int( $r->user_id );
@@ -117,7 +125,9 @@ function to_string__GetReminderStatusRequest( & $r )
 
 function to_string__GetReminderStatusResponse( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \generic_protocol\to_string__BackwardMessage( $r );
 
     $res .= " total_size=" . \basic_parser\to_string__int( $r->total_size );
@@ -128,7 +138,9 @@ function to_string__GetReminderStatusResponse( & $r )
 
 function to_string__FindContactsRequest( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " user_id=" . \basic_parser\to_string__int( $r->user_id );
@@ -142,7 +154,9 @@ function to_string__FindContactsRequest( & $r )
 
 function to_string__FindContactsResponse( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \generic_protocol\to_string__BackwardMessage( $r );
 
     $res .= " total_size=" . \basic_parser\to_string__int( $r->total_size );
@@ -153,7 +167,9 @@ function to_string__FindContactsResponse( & $r )
 
 function to_string__GetContactRequest( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " contact_id=" . \basic_parser\to_string__int( $r->contact_id );
@@ -164,7 +180,9 @@ function to_string__GetContactRequest( & $r )
 
 function to_string__GetContactResponse( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \generic_protocol\to_string__BackwardMessage( $r );
 
     $res .= " contact=" . to_string__Contact( $r->contact );
@@ -174,7 +192,9 @@ function to_string__GetContactResponse( & $r )
 
 function to_string__AddReminderRequest( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " contact_phone_id=" . \basic_parser\to_string__int( $r->contact_phone_id );
@@ -185,7 +205,9 @@ function to_string__AddReminderRequest( & $r )
 
 function to_string__AddReminderResponse( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \generic_protocol\to_string__BackwardMessage( $r );
 
     $res .= " job_id=" . \basic_parser\to_string__int( $r->job_id );
@@ -195,7 +217,9 @@ function to_string__AddReminderResponse( & $r )
 
 function to_string__ModifyReminderRequest( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " job_id=" . \basic_parser\to_string__int( $r->job_id );
@@ -207,7 +231,9 @@ function to_string__ModifyReminderRequest( & $r )
 
 function to_string__ModifyReminderResponse( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \generic_protocol\to_string__BackwardMessage( $r );
 
 
@@ -216,7 +242,9 @@ function to_string__ModifyReminderResponse( & $r )
 
 function to_string__GetReminderRequest( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " job_id=" . \basic_parser\to_string__int( $r->job_id );
@@ -226,7 +254,9 @@ function to_string__GetReminderRequest( & $r )
 
 function to_string__GetReminderResponse( & $r )
 {
-    $res = "";    // base class
+    $res = "";
+
+    // base class
     $res .= \generic_protocol\to_string__BackwardMessage( $r );
 
     $res .= " contact_id=" . \basic_parser\to_string__int( $r->contact_id );
