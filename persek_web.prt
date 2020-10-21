@@ -18,11 +18,11 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-# $Revision: 13523 $ $Date:: 2020-08-19 #$ $Author: serge $
+# $Revision: 14002 $ $Date:: 2020-10-22 #$ $Author: serge $
 
 ############################################################
 
-protocol persek_web
+protocol persek_web_protocol
 
 ############################################################
 
@@ -48,7 +48,7 @@ obj Reminder
     o basic_objects::LocalTime  effective_time         # local time
     uint32                      remind_period          # remind period in min
     map<string, string>         params
-    map<e dtmf_tools::tone_e, o persek_protocol::ReminderAction> actions
+    map<e dtmf_tools_protocol::tone_e, o persek_protocol::ReminderAction> actions
 
     o persek_protocol::ReminderOptions           options
 
@@ -65,7 +65,7 @@ msg GetReminderStatusRequest: persek_protocol::Request
 
     uint32                          page_size
     uint32                          page_number
-    e lang_tools::lang_e            lang
+    e lang_tools_protocol::lang_e            lang
 
 msg_end
 
@@ -113,7 +113,7 @@ msg FindContactsRequest: persek_protocol::Request
 
     uint32                      page_size
     uint32                      page_number
-    e lang_tools::lang_e        lang
+    e lang_tools_protocol::lang_e        lang
 
 msg_end
 
@@ -143,7 +143,7 @@ msg_end
 msg GetContactRequest: persek_protocol::Request
 
     uint32                  contact_id
-    e lang_tools::lang_e    lang
+    e lang_tools_protocol::lang_e    lang
 msg_end
 
 msg GetContactResponse: generic_protocol::BackwardMessage
