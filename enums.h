@@ -1,5 +1,5 @@
-#ifndef APG_PERSEK_WEB__ENUMS_H
-#define APG_PERSEK_WEB__ENUMS_H
+#ifndef APG_PERSEK_WEB_PROTOCOL__ENUMS_H
+#define APG_PERSEK_WEB_PROTOCOL__ENUMS_H
 
 namespace persek_web_protocol
 {
@@ -23,4 +23,4 @@ enum class request_type_e
 
 } // namespace persek_web_protocol
 
-#endif // APG_PERSEK_WEB__ENUMS_H
+#endif // APG_PERSEK_WEB_PROTOCOL__ENUMS_H

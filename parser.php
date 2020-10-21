@@ -3,8 +3,9 @@
 namespace persek_web_protocol;
 
 
-// includes
+// base include
 require_once __DIR__.'/../persek_protocol/parser.php';
+// includes
 require_once __DIR__.'/../generic_protocol/parser.php';
 require_once __DIR__.'/../basic_objects/parser.php';
 require_once __DIR__.'/../dtmf_tools_protocol/parser.php';
@@ -31,7 +32,7 @@ function parse__Reminder( & $csv_arr, & $offset )
     $res->effective_time = \basic_objects\parse__LocalTime( $csv_arr, $offset );
     $res->remind_period = \basic_parser\parse__int( $csv_arr, $offset );
     $res->params = \basic_parser\parse__map( $csv_arr, $offset, '\basic_parser\parse__string', '\basic_parser\parse__string' ); // Map
-    $res->actions = \basic_parser\parse__map( $csv_arr, $offset, '\dtmf_tools\parse__tone_e', '\persek_protocol\parse__ReminderAction' ); // Map
+    $res->actions = \basic_parser\parse__map( $csv_arr, $offset, '\dtmf_tools_protocol\parse__tone_e', '\persek_protocol\parse__ReminderAction' ); // Map
     $res->options = \persek_protocol\parse__ReminderOptions( $csv_arr, $offset );
 
     return $res;
@@ -96,7 +97,7 @@ function parse__GetReminderStatusRequest( & $csv_arr )
     $res->effective_date_time_range = \basic_objects\parse__LocalTimeRange( $csv_arr, $offset );
     $res->page_size = \basic_parser\parse__int( $csv_arr, $offset );
     $res->page_number = \basic_parser\parse__int( $csv_arr, $offset );
-    $res->lang = \lang_tools\parse__lang_e( $csv_arr, $offset );
+    $res->lang = \lang_tools_protocol\parse__lang_e( $csv_arr, $offset );
 
     return $res;
 }
@@ -129,7 +130,7 @@ function parse__FindContactsRequest( & $csv_arr )
     $res->search_filter = \basic_parser\parse__string( $csv_arr, $offset );
     $res->page_size = \basic_parser\parse__int( $csv_arr, $offset );
     $res->page_number = \basic_parser\parse__int( $csv_arr, $offset );
-    $res->lang = \lang_tools\parse__lang_e( $csv_arr, $offset );
+    $res->lang = \lang_tools_protocol\parse__lang_e( $csv_arr, $offset );
 
     return $res;
 }
@@ -159,7 +160,7 @@ function parse__GetContactRequest( & $csv_arr )
     \persek_protocol\parse__Request( $res, $csv_arr, $offset );
 
     $res->contact_id = \basic_parser\parse__int( $csv_arr, $offset );
-    $res->lang = \lang_tools\parse__lang_e( $csv_arr, $offset );
+    $res->lang = \lang_tools_protocol\parse__lang_e( $csv_arr, $offset );
 
     return $res;
 }
@@ -279,18 +280,18 @@ protected static function parse_csv_array( $csv_arr )
 
     $handler_map = array(
         // messages
-        'persek_web/GetReminderStatusRequest'         => 'parse__GetReminderStatusRequest',
-        'persek_web/GetReminderStatusResponse'         => 'parse__GetReminderStatusResponse',
-        'persek_web/FindContactsRequest'         => 'parse__FindContactsRequest',
-        'persek_web/FindContactsResponse'         => 'parse__FindContactsResponse',
-        'persek_web/GetContactRequest'         => 'parse__GetContactRequest',
-        'persek_web/GetContactResponse'         => 'parse__GetContactResponse',
-        'persek_web/AddReminderRequest'         => 'parse__AddReminderRequest',
-        'persek_web/AddReminderResponse'         => 'parse__AddReminderResponse',
-        'persek_web/ModifyReminderRequest'         => 'parse__ModifyReminderRequest',
-        'persek_web/ModifyReminderResponse'         => 'parse__ModifyReminderResponse',
-        'persek_web/GetReminderRequest'         => 'parse__GetReminderRequest',
-        'persek_web/GetReminderResponse'         => 'parse__GetReminderResponse',
+        'persek_web_protocol/GetReminderStatusRequest'         => 'parse__GetReminderStatusRequest',
+        'persek_web_protocol/GetReminderStatusResponse'         => 'parse__GetReminderStatusResponse',
+        'persek_web_protocol/FindContactsRequest'         => 'parse__FindContactsRequest',
+        'persek_web_protocol/FindContactsResponse'         => 'parse__FindContactsResponse',
+        'persek_web_protocol/GetContactRequest'         => 'parse__GetContactRequest',
+        'persek_web_protocol/GetContactResponse'         => 'parse__GetContactResponse',
+        'persek_web_protocol/AddReminderRequest'         => 'parse__AddReminderRequest',
+        'persek_web_protocol/AddReminderResponse'         => 'parse__AddReminderResponse',
+        'persek_web_protocol/ModifyReminderRequest'         => 'parse__ModifyReminderRequest',
+        'persek_web_protocol/ModifyReminderResponse'         => 'parse__ModifyReminderResponse',
+        'persek_web_protocol/GetReminderRequest'         => 'parse__GetReminderRequest',
+        'persek_web_protocol/GetReminderResponse'         => 'parse__GetReminderResponse',
     );
 
     $type = $csv_arr[0][0];
@@ -306,7 +307,7 @@ protected static function parse_csv_array( $csv_arr )
 
 }
 
-# namespace_end persek_web_protocol
+// namespace_end persek_web_protocol
 
 
 ?>

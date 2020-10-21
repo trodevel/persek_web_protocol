@@ -3,8 +3,9 @@
 namespace persek_web_protocol;
 
 
-// includes
+// base include
 require_once __DIR__.'/../persek_protocol/str_helper.php';
+// includes
 require_once __DIR__.'/../generic_protocol/str_helper.php';
 require_once __DIR__.'/../basic_objects/str_helper.php';
 require_once __DIR__.'/../dtmf_tools_protocol/str_helper.php';
@@ -45,7 +46,7 @@ function to_string__Reminder( & $r )
     $res .= " effective_time=" . \basic_objects\to_string__LocalTime( $r->effective_time );
     $res .= " remind_period=" . \basic_parser\to_string__int( $r->remind_period );
     $res .= " params=" . \basic_parser\to_string__map( $r->params, '\basic_parser\to_string__string', '\basic_parser\to_string__string' ); // Map
-    $res .= " actions=" . \basic_parser\to_string__map( $r->actions, '\dtmf_tools\to_string__tone_e', '\persek_protocol\to_string__ReminderAction' ); // Map
+    $res .= " actions=" . \basic_parser\to_string__map( $r->actions, '\dtmf_tools_protocol\to_string__tone_e', '\persek_protocol\to_string__ReminderAction' ); // Map
     $res .= " options=" . \persek_protocol\to_string__ReminderOptions( $r->options );
 
     $res .= ")";
@@ -118,7 +119,7 @@ function to_string__GetReminderStatusRequest( & $r )
     $res .= " effective_date_time_range=" . \basic_objects\to_string__LocalTimeRange( $r->effective_date_time_range );
     $res .= " page_size=" . \basic_parser\to_string__int( $r->page_size );
     $res .= " page_number=" . \basic_parser\to_string__int( $r->page_number );
-    $res .= " lang=" . \lang_tools\to_string__lang_e( $r->lang );
+    $res .= " lang=" . \lang_tools_protocol\to_string__lang_e( $r->lang );
 
     return $res;
 }
@@ -147,7 +148,7 @@ function to_string__FindContactsRequest( & $r )
     $res .= " search_filter=" . \basic_parser\to_string__string( $r->search_filter );
     $res .= " page_size=" . \basic_parser\to_string__int( $r->page_size );
     $res .= " page_number=" . \basic_parser\to_string__int( $r->page_number );
-    $res .= " lang=" . \lang_tools\to_string__lang_e( $r->lang );
+    $res .= " lang=" . \lang_tools_protocol\to_string__lang_e( $r->lang );
 
     return $res;
 }
@@ -173,7 +174,7 @@ function to_string__GetContactRequest( & $r )
     $res .= \persek_protocol\to_string__Request( $r );
 
     $res .= " contact_id=" . \basic_parser\to_string__int( $r->contact_id );
-    $res .= " lang=" . \lang_tools\to_string__lang_e( $r->lang );
+    $res .= " lang=" . \lang_tools_protocol\to_string__lang_e( $r->lang );
 
     return $res;
 }
@@ -302,7 +303,7 @@ function to_string( $obj )
     return \persek_protocol\to_string( $obj );
 }
 
-# namespace_end persek_web_protocol
+// namespace_end persek_web_protocol
 
 
 ?>

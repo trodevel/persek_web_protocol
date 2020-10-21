@@ -3,14 +3,17 @@
 namespace persek_web_protocol;
 
 
-// includes
+// base include
 require_once __DIR__.'/../persek_protocol/dummy_creator.php';
+// includes
 require_once __DIR__.'/../basic_parser/dummy_creator.php';
 require_once __DIR__.'/../generic_protocol/dummy_creator.php';
 require_once __DIR__.'/../basic_objects/dummy_creator.php';
 require_once __DIR__.'/../dtmf_tools_protocol/dummy_creator.php';
 require_once __DIR__.'/../lang_tools_protocol/dummy_creator.php';
-require_once 'object_initializer.php';
+
+// own includes
+require_once __DIR__.'/../persek_web_protocol/object_initializer.php';
 
 // enums
 
@@ -37,7 +40,7 @@ function create_dummy__Reminder()
         , \basic_objects\create_dummy__LocalTime()
         , \basic_parser\create_dummy__int32()
         , \basic_parser\create_dummy__map( '\basic_parser\create_dummy__string',  '\basic_parser\create_dummy__string' ) // Map
-        , \basic_parser\create_dummy__map( '\dtmf_tools\create_dummy__tone_e',  '\persek_protocol\create_dummy__ReminderAction' ) // Map
+        , \basic_parser\create_dummy__map( '\dtmf_tools_protocol\create_dummy__tone_e',  '\persek_protocol\create_dummy__ReminderAction' ) // Map
         , \persek_protocol\create_dummy__ReminderOptions()
         );
     return $res;
@@ -99,7 +102,7 @@ function create_dummy__GetReminderStatusRequest()
         , \basic_objects\create_dummy__LocalTimeRange()
         , \basic_parser\create_dummy__int32()
         , \basic_parser\create_dummy__int32()
-        , \lang_tools\create_dummy__lang_e()
+        , \lang_tools_protocol\create_dummy__lang_e()
         );
     return $res;
 }
@@ -125,7 +128,7 @@ function create_dummy__FindContactsRequest()
         , \basic_parser\create_dummy__string()
         , \basic_parser\create_dummy__int32()
         , \basic_parser\create_dummy__int32()
-        , \lang_tools\create_dummy__lang_e()
+        , \lang_tools_protocol\create_dummy__lang_e()
         );
     return $res;
 }
@@ -148,7 +151,7 @@ function create_dummy__GetContactRequest()
     initialize__GetContactRequest( $res
         , \basic_parser\create_dummy__string()
         , \basic_parser\create_dummy__int32()
-        , \lang_tools\create_dummy__lang_e()
+        , \lang_tools_protocol\create_dummy__lang_e()
         );
     return $res;
 }
@@ -231,7 +234,7 @@ function create_dummy__GetReminderResponse()
     return $res;
 }
 
-# namespace_end persek_web_protocol
+// namespace_end persek_web_protocol
 
 
 ?>

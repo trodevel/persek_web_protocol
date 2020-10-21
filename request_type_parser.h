@@ -1,5 +1,5 @@
-#ifndef APG_PERSEK_WEB__REQUEST_TYPE_PARSER_H
-#define APG_PERSEK_WEB__REQUEST_TYPE_PARSER_H
+#ifndef APG_PERSEK_WEB_PROTOCOL__REQUEST_TYPE_PARSER_H
+#define APG_PERSEK_WEB_PROTOCOL__REQUEST_TYPE_PARSER_H
 
 // includes
 #include "enums.h"
@@ -14,4 +14,4 @@ public:
 };
 } // namespace persek_web_protocol
 
-#endif // APG_PERSEK_WEB__REQUEST_TYPE_PARSER_H
+#endif // APG_PERSEK_WEB_PROTOCOL__REQUEST_TYPE_PARSER_H

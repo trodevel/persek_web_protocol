@@ -1,5 +1,5 @@
-#ifndef APG_PERSEK_WEB__DUMMY_CREATOR_H
-#define APG_PERSEK_WEB__DUMMY_CREATOR_H
+#ifndef APG_PERSEK_WEB_PROTOCOL__DUMMY_CREATOR_H
+#define APG_PERSEK_WEB_PROTOCOL__DUMMY_CREATOR_H
 
 // includes
 #include "protocol.h"
@@ -39,4 +39,4 @@ GetReminderResponse * create__GetReminderResponse();
 
 } // namespace persek_web_protocol
 
-#endif // APG_PERSEK_WEB__DUMMY_CREATOR_H
+#endif // APG_PERSEK_WEB_PROTOCOL__DUMMY_CREATOR_H

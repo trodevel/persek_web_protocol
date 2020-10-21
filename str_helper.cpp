@@ -56,7 +56,7 @@ std::ostream & write( std::ostream & os, const Reminder & r )
     os << " effective_time="; ::basic_objects::str_helper::write( os, r.effective_time );
     os << " remind_period="; write( os, r.remind_period );
     os << " params="; write_t( os, r.params, static_cast<std::ostream & (*)( std::ostream &, const std::string &  )>( &write ), static_cast<std::ostream & (*)( std::ostream &, const std::string &  )>( &write ) ); // Map
-    os << " actions="; write_t( os, r.actions, static_cast<std::ostream & (*)( std::ostream &, dtmf_tools::tone_e )>( &::dtmf_tools::str_helper::write ), static_cast<std::ostream & (*)( std::ostream &, const persek_protocol::ReminderAction &  )>( &::persek_protocol::str_helper::write ) ); // Map
+    os << " actions="; write_t( os, r.actions, static_cast<std::ostream & (*)( std::ostream &, dtmf_tools_protocol::tone_e )>( &::dtmf_tools_protocol::str_helper::write ), static_cast<std::ostream & (*)( std::ostream &, const persek_protocol::ReminderAction &  )>( &::persek_protocol::str_helper::write ) ); // Map
     os << " options="; ::persek_protocol::str_helper::write( os, r.options );
 
     os << ")";
@@ -123,7 +123,7 @@ std::ostream & write( std::ostream & os, const GetReminderStatusRequest & r )
     os << " effective_date_time_range="; ::basic_objects::str_helper::write( os, r.effective_date_time_range );
     os << " page_size="; write( os, r.page_size );
     os << " page_number="; write( os, r.page_number );
-    os << " lang="; ::lang_tools::str_helper::write( os, r.lang );
+    os << " lang="; ::lang_tools_protocol::str_helper::write( os, r.lang );
 
     return os;
 }
@@ -148,7 +148,7 @@ std::ostream & write( std::ostream & os, const FindContactsRequest & r )
     os << " search_filter="; write( os, r.search_filter );
     os << " page_size="; write( os, r.page_size );
     os << " page_number="; write( os, r.page_number );
-    os << " lang="; ::lang_tools::str_helper::write( os, r.lang );
+    os << " lang="; ::lang_tools_protocol::str_helper::write( os, r.lang );
 
     return os;
 }
@@ -170,7 +170,7 @@ std::ostream & write( std::ostream & os, const GetContactRequest & r )
     ::persek_protocol::str_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
 
     os << " contact_id="; write( os, r.contact_id );
-    os << " lang="; ::lang_tools::str_helper::write( os, r.lang );
+    os << " lang="; ::lang_tools_protocol::str_helper::write( os, r.lang );
 
     return os;
 }

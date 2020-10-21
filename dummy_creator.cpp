@@ -39,7 +39,7 @@ Reminder create__Reminder()
         , ::basic_objects::dummy::create__LocalTime()
         , ::basic_parser::dummy::create__uint32()
         , ::basic_parser::dummy::create__map_t<std::string, std::string, std::string(*)(), std::string(*)()>( & ::basic_parser::dummy::create__string, & ::basic_parser::dummy::create__string ) // Map
-        , ::basic_parser::dummy::create__map_t<dtmf_tools::tone_e, persek_protocol::ReminderAction, dtmf_tools::tone_e(*)(), persek_protocol::ReminderAction(*)()>( & ::dtmf_tools::dummy::create__tone_e, & ::persek_protocol::dummy::create__ReminderAction ) // Map
+        , ::basic_parser::dummy::create__map_t<dtmf_tools_protocol::tone_e, persek_protocol::ReminderAction, dtmf_tools_protocol::tone_e(*)(), persek_protocol::ReminderAction(*)()>( & ::dtmf_tools_protocol::dummy::create__tone_e, & ::persek_protocol::dummy::create__ReminderAction ) // Map
         , ::persek_protocol::dummy::create__ReminderOptions()
         );
 
@@ -104,7 +104,7 @@ GetReminderStatusRequest * create__GetReminderStatusRequest()
         , ::basic_objects::dummy::create__LocalTimeRange()
         , ::basic_parser::dummy::create__uint32()
         , ::basic_parser::dummy::create__uint32()
-        , ::lang_tools::dummy::create__lang_e()
+        , ::lang_tools_protocol::dummy::create__lang_e()
         );
 
     return res;
@@ -132,7 +132,7 @@ FindContactsRequest * create__FindContactsRequest()
         , ::basic_parser::dummy::create__string()
         , ::basic_parser::dummy::create__uint32()
         , ::basic_parser::dummy::create__uint32()
-        , ::lang_tools::dummy::create__lang_e()
+        , ::lang_tools_protocol::dummy::create__lang_e()
         );
 
     return res;
@@ -157,7 +157,7 @@ GetContactRequest * create__GetContactRequest()
     ::persek_web_protocol::initialize( res
         , ::basic_parser::dummy::create__string()
         , ::basic_parser::dummy::create__uint32()
-        , ::lang_tools::dummy::create__lang_e()
+        , ::lang_tools_protocol::dummy::create__lang_e()
         );
 
     return res;

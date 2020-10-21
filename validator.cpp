@@ -34,7 +34,7 @@ bool validate( const std::string & prefix, const Reminder & r )
     ::basic_objects::validator::validate( prefix + ".EFFECTIVE_TIME", r.effective_time );
     validate( prefix + ".REMIND_PERIOD", r.remind_period );
     validate_t( prefix + ".PARAMS", r.params, static_cast<bool (*)( const std::string &, const std::string &  )>( &validate ), static_cast<bool (*)( const std::string &, const std::string &  )>( &validate ) ); // Map
-    validate_t( prefix + ".ACTIONS", r.actions, static_cast<bool (*)( const std::string &, dtmf_tools::tone_e )>( &::dtmf_tools::validator::validate ), static_cast<bool (*)( const std::string &, const persek_protocol::ReminderAction &  )>( &::persek_protocol::validator::validate ) ); // Map
+    validate_t( prefix + ".ACTIONS", r.actions, static_cast<bool (*)( const std::string &, dtmf_tools_protocol::tone_e )>( &::dtmf_tools_protocol::validator::validate ), static_cast<bool (*)( const std::string &, const persek_protocol::ReminderAction &  )>( &::persek_protocol::validator::validate ) ); // Map
     ::persek_protocol::validator::validate( prefix + ".OPTIONS", r.options );
 
     return true;
@@ -91,7 +91,7 @@ bool validate( const GetReminderStatusRequest & r )
     ::basic_objects::validator::validate( "EFFECTIVE_DATE_TIME_RANGE", r.effective_date_time_range );
     validate( "PAGE_SIZE", r.page_size );
     validate( "PAGE_NUMBER", r.page_number );
-    ::lang_tools::validator::validate( "LANG", r.lang );
+    ::lang_tools_protocol::validator::validate( "LANG", r.lang );
 
     return true;
 }
@@ -116,7 +116,7 @@ bool validate( const FindContactsRequest & r )
     validate( "SEARCH_FILTER", r.search_filter ); // String
     validate( "PAGE_SIZE", r.page_size );
     validate( "PAGE_NUMBER", r.page_number );
-    ::lang_tools::validator::validate( "LANG", r.lang );
+    ::lang_tools_protocol::validator::validate( "LANG", r.lang );
 
     return true;
 }
@@ -138,7 +138,7 @@ bool validate( const GetContactRequest & r )
     ::persek_protocol::validator::validate( static_cast<const persek_protocol::Request&>( r ) );
 
     validate( "CONTACT_ID", r.contact_id );
-    ::lang_tools::validator::validate( "LANG", r.lang );
+    ::lang_tools_protocol::validator::validate( "LANG", r.lang );
 
     return true;
 }

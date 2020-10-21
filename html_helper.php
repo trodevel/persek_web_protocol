@@ -3,14 +3,17 @@
 namespace persek_web_protocol;
 
 
-// includes
+// base include
 require_once __DIR__.'/../persek_protocol/html_helper.php';
+// includes
 require_once __DIR__.'/../generic_protocol/html_helper.php';
 require_once __DIR__.'/../basic_objects/html_helper.php';
 require_once __DIR__.'/../dtmf_tools_protocol/html_helper.php';
 require_once __DIR__.'/../lang_tools_protocol/html_helper.php';
 require_once __DIR__.'/../basic_parser/html_helper.php';
-require_once 'str_helper.php';
+
+// own includes
+require_once __DIR__.'/../persek_web_protocol/str_helper.php';
 
 // enums
 
@@ -36,7 +39,7 @@ function to_html__Reminder( & $r )
         \basic_objects\to_html__LocalTime( $r->effective_time ),
         \basic_parser\to_html__int( $r->remind_period ),
         \basic_parser\to_html__map( $r->params, '\basic_parser\to_html__string', '\basic_parser\to_html__string' ),
-        \basic_parser\to_html__map( $r->actions, '\dtmf_tools\to_html__tone_e', '\persek_protocol\to_html__ReminderAction' ),
+        \basic_parser\to_html__map( $r->actions, '\dtmf_tools_protocol\to_html__tone_e', '\persek_protocol\to_html__ReminderAction' ),
         \persek_protocol\to_html__ReminderOptions( $r->options )
         );
 
@@ -109,7 +112,7 @@ function to_html__GetReminderStatusRequest( & $r )
         \basic_objects\to_html__LocalTimeRange( $r->effective_date_time_range ),
         \basic_parser\to_html__int( $r->page_size ),
         \basic_parser\to_html__int( $r->page_number ),
-        \lang_tools\to_html__lang_e( $r->lang )
+        \lang_tools_protocol\to_html__lang_e( $r->lang )
         );
 
     $res = \basic_parser\to_html_table( $header, $data );
@@ -142,7 +145,7 @@ function to_html__FindContactsRequest( & $r )
         \basic_parser\to_html__string( $r->search_filter ),
         \basic_parser\to_html__int( $r->page_size ),
         \basic_parser\to_html__int( $r->page_number ),
-        \lang_tools\to_html__lang_e( $r->lang )
+        \lang_tools_protocol\to_html__lang_e( $r->lang )
         );
 
     $res = \basic_parser\to_html_table( $header, $data );
@@ -172,7 +175,7 @@ function to_html__GetContactRequest( & $r )
     $data = array(
         \persek_protocol\to_html__Request( $r ),
         \basic_parser\to_html__int( $r->contact_id ),
-        \lang_tools\to_html__lang_e( $r->lang )
+        \lang_tools_protocol\to_html__lang_e( $r->lang )
         );
 
     $res = \basic_parser\to_html_table( $header, $data );
@@ -318,7 +321,7 @@ function to_html( $obj )
     return \persek_protocol\to_html( $obj );
 }
 
-# namespace_end persek_web_protocol
+// namespace_end persek_web_protocol
 
 
 ?>

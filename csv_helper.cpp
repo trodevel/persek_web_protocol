@@ -38,7 +38,7 @@ std::ostream & write( std::ostream & os, const Reminder & r )
     ::basic_objects::csv_helper::write( os, r.effective_time );
     write( os, r.remind_period );
     write_t( os, r.params, static_cast<std::ostream & (*)( std::ostream &, const std::string &  )>( &write ), static_cast<std::ostream & (*)( std::ostream &, const std::string &  )>( &write ) ); // Map
-    write_t( os, r.actions, static_cast<std::ostream & (*)( std::ostream &, dtmf_tools::tone_e )>( &::dtmf_tools::csv_helper::write ), static_cast<std::ostream & (*)( std::ostream &, const persek_protocol::ReminderAction &  )>( &::persek_protocol::csv_helper::write ) ); // Map
+    write_t( os, r.actions, static_cast<std::ostream & (*)( std::ostream &, dtmf_tools_protocol::tone_e )>( &::dtmf_tools_protocol::csv_helper::write ), static_cast<std::ostream & (*)( std::ostream &, const persek_protocol::ReminderAction &  )>( &::persek_protocol::csv_helper::write ) ); // Map
     ::persek_protocol::csv_helper::write( os, r.options );
 
     return os;
@@ -87,7 +87,7 @@ std::ostream & write( std::ostream & os, const Contact & r )
 
 std::ostream & write( std::ostream & os, const GetReminderStatusRequest & r )
 {
-    write( os, std::string( "persek_web/GetReminderStatusRequest" ) );
+    write( os, std::string( "persek_web_protocol/GetReminderStatusRequest" ) );
 
     // base class
     ::persek_protocol::csv_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
@@ -97,14 +97,14 @@ std::ostream & write( std::ostream & os, const GetReminderStatusRequest & r )
     ::basic_objects::csv_helper::write( os, r.effective_date_time_range );
     write( os, r.page_size );
     write( os, r.page_number );
-    ::lang_tools::csv_helper::write( os, r.lang );
+    ::lang_tools_protocol::csv_helper::write( os, r.lang );
 
     return os;
 }
 
 std::ostream & write( std::ostream & os, const GetReminderStatusResponse & r )
 {
-    write( os, std::string( "persek_web/GetReminderStatusResponse" ) );
+    write( os, std::string( "persek_web_protocol/GetReminderStatusResponse" ) );
 
     // base class
     ::generic_protocol::csv_helper::write( os, static_cast<const generic_protocol::BackwardMessage&>( r ) );
@@ -117,7 +117,7 @@ std::ostream & write( std::ostream & os, const GetReminderStatusResponse & r )
 
 std::ostream & write( std::ostream & os, const FindContactsRequest & r )
 {
-    write( os, std::string( "persek_web/FindContactsRequest" ) );
+    write( os, std::string( "persek_web_protocol/FindContactsRequest" ) );
 
     // base class
     ::persek_protocol::csv_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
@@ -126,14 +126,14 @@ std::ostream & write( std::ostream & os, const FindContactsRequest & r )
     write( os, r.search_filter );
     write( os, r.page_size );
     write( os, r.page_number );
-    ::lang_tools::csv_helper::write( os, r.lang );
+    ::lang_tools_protocol::csv_helper::write( os, r.lang );
 
     return os;
 }
 
 std::ostream & write( std::ostream & os, const FindContactsResponse & r )
 {
-    write( os, std::string( "persek_web/FindContactsResponse" ) );
+    write( os, std::string( "persek_web_protocol/FindContactsResponse" ) );
 
     // base class
     ::generic_protocol::csv_helper::write( os, static_cast<const generic_protocol::BackwardMessage&>( r ) );
@@ -146,20 +146,20 @@ std::ostream & write( std::ostream & os, const FindContactsResponse & r )
 
 std::ostream & write( std::ostream & os, const GetContactRequest & r )
 {
-    write( os, std::string( "persek_web/GetContactRequest" ) );
+    write( os, std::string( "persek_web_protocol/GetContactRequest" ) );
 
     // base class
     ::persek_protocol::csv_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
 
     write( os, r.contact_id );
-    ::lang_tools::csv_helper::write( os, r.lang );
+    ::lang_tools_protocol::csv_helper::write( os, r.lang );
 
     return os;
 }
 
 std::ostream & write( std::ostream & os, const GetContactResponse & r )
 {
-    write( os, std::string( "persek_web/GetContactResponse" ) );
+    write( os, std::string( "persek_web_protocol/GetContactResponse" ) );
 
     // base class
     ::generic_protocol::csv_helper::write( os, static_cast<const generic_protocol::BackwardMessage&>( r ) );
@@ -171,7 +171,7 @@ std::ostream & write( std::ostream & os, const GetContactResponse & r )
 
 std::ostream & write( std::ostream & os, const AddReminderRequest & r )
 {
-    write( os, std::string( "persek_web/AddReminderRequest" ) );
+    write( os, std::string( "persek_web_protocol/AddReminderRequest" ) );
 
     // base class
     ::persek_protocol::csv_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
@@ -184,7 +184,7 @@ std::ostream & write( std::ostream & os, const AddReminderRequest & r )
 
 std::ostream & write( std::ostream & os, const AddReminderResponse & r )
 {
-    write( os, std::string( "persek_web/AddReminderResponse" ) );
+    write( os, std::string( "persek_web_protocol/AddReminderResponse" ) );
 
     // base class
     ::generic_protocol::csv_helper::write( os, static_cast<const generic_protocol::BackwardMessage&>( r ) );
@@ -196,7 +196,7 @@ std::ostream & write( std::ostream & os, const AddReminderResponse & r )
 
 std::ostream & write( std::ostream & os, const ModifyReminderRequest & r )
 {
-    write( os, std::string( "persek_web/ModifyReminderRequest" ) );
+    write( os, std::string( "persek_web_protocol/ModifyReminderRequest" ) );
 
     // base class
     ::persek_protocol::csv_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
@@ -210,7 +210,7 @@ std::ostream & write( std::ostream & os, const ModifyReminderRequest & r )
 
 std::ostream & write( std::ostream & os, const ModifyReminderResponse & r )
 {
-    write( os, std::string( "persek_web/ModifyReminderResponse" ) );
+    write( os, std::string( "persek_web_protocol/ModifyReminderResponse" ) );
 
     // base class
     ::generic_protocol::csv_helper::write( os, static_cast<const generic_protocol::BackwardMessage&>( r ) );
@@ -221,7 +221,7 @@ std::ostream & write( std::ostream & os, const ModifyReminderResponse & r )
 
 std::ostream & write( std::ostream & os, const GetReminderRequest & r )
 {
-    write( os, std::string( "persek_web/GetReminderRequest" ) );
+    write( os, std::string( "persek_web_protocol/GetReminderRequest" ) );
 
     // base class
     ::persek_protocol::csv_helper::write( os, static_cast<const persek_protocol::Request&>( r ) );
@@ -233,7 +233,7 @@ std::ostream & write( std::ostream & os, const GetReminderRequest & r )
 
 std::ostream & write( std::ostream & os, const GetReminderResponse & r )
 {
-    write( os, std::string( "persek_web/GetReminderResponse" ) );
+    write( os, std::string( "persek_web_protocol/GetReminderResponse" ) );
 
     // base class
     ::generic_protocol::csv_helper::write( os, static_cast<const generic_protocol::BackwardMessage&>( r ) );

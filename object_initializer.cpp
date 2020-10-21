@@ -17,7 +17,7 @@ void initialize( Reminder * res
     , const basic_objects::LocalTime &  effective_time
     , uint32_t remind_period
     , const std::map<std::string, std::string> &  params
-    , const std::map<dtmf_tools::tone_e, persek_protocol::ReminderAction> &  actions
+    , const std::map<dtmf_tools_protocol::tone_e, persek_protocol::ReminderAction> &  actions
     , const persek_protocol::ReminderOptions &  options
  )
 {
@@ -101,7 +101,7 @@ void initialize( GetReminderStatusRequest * res
     , const basic_objects::LocalTimeRange &  effective_date_time_range
     , uint32_t page_size
     , uint32_t page_number
-    , lang_tools::lang_e lang
+    , lang_tools_protocol::lang_e lang
  )
 {
     // base class
@@ -133,7 +133,7 @@ void initialize( FindContactsRequest * res
     , const std::string &  search_filter
     , uint32_t page_size
     , uint32_t page_number
-    , lang_tools::lang_e lang
+    , lang_tools_protocol::lang_e lang
  )
 {
     // base class
@@ -161,7 +161,7 @@ void initialize( FindContactsResponse * res
 void initialize( GetContactRequest * res
     , const std::string &  base_class_param_1
     , uint32_t contact_id
-    , lang_tools::lang_e lang
+    , lang_tools_protocol::lang_e lang
  )
 {
     // base class
@@ -263,7 +263,7 @@ GetReminderStatusRequest * create_GetReminderStatusRequest(
     , const basic_objects::LocalTimeRange &  effective_date_time_range
     , uint32_t page_size
     , uint32_t page_number
-    , lang_tools::lang_e lang
+    , lang_tools_protocol::lang_e lang
  )
 {
     auto * res = new GetReminderStatusRequest;
@@ -291,7 +291,7 @@ FindContactsRequest * create_FindContactsRequest(
     , const std::string &  search_filter
     , uint32_t page_size
     , uint32_t page_number
-    , lang_tools::lang_e lang
+    , lang_tools_protocol::lang_e lang
  )
 {
     auto * res = new FindContactsRequest;
@@ -316,7 +316,7 @@ FindContactsResponse * create_FindContactsResponse(
 GetContactRequest * create_GetContactRequest(
     const std::string &  base_class_param_1
     , uint32_t contact_id
-    , lang_tools::lang_e lang
+    , lang_tools_protocol::lang_e lang
  )
 {
     auto * res = new GetContactRequest;

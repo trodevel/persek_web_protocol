@@ -43,7 +43,7 @@ void get_value_or_throw( Reminder * res, const std::string & prefix, const gener
     ::basic_objects::parser::get_value_or_throw( & res->effective_time, prefix + ".EFFECTIVE_TIME", r );
     get_value_or_throw( & res->remind_period, prefix + ".REMIND_PERIOD", r );
     get_value_or_throw_t( & res->params, prefix + ".PARAMS", r, static_cast<void (*)( std::string * , const std::string & , const generic_request::Request & )>( &get_value_or_throw ), static_cast<void (*)( std::string * , const std::string & , const generic_request::Request & )>( &get_value_or_throw ) ); // Map
-    get_value_or_throw_t( & res->actions, prefix + ".ACTIONS", r, static_cast<void (*)( dtmf_tools::tone_e * , const std::string & , const generic_request::Request & )>( &::dtmf_tools::parser::get_value_or_throw ), static_cast<void (*)( persek_protocol::ReminderAction * , const std::string & , const generic_request::Request & )>( &::persek_protocol::parser::get_value_or_throw ) ); // Map
+    get_value_or_throw_t( & res->actions, prefix + ".ACTIONS", r, static_cast<void (*)( dtmf_tools_protocol::tone_e * , const std::string & , const generic_request::Request & )>( &::dtmf_tools_protocol::parser::get_value_or_throw ), static_cast<void (*)( persek_protocol::ReminderAction * , const std::string & , const generic_request::Request & )>( &::persek_protocol::parser::get_value_or_throw ) ); // Map
     ::persek_protocol::parser::get_value_or_throw( & res->options, prefix + ".OPTIONS", r );
 }
 
@@ -94,7 +94,7 @@ void get_value_or_throw( GetReminderStatusRequest * res, const generic_request::
     ::basic_objects::parser::get_value_or_throw( & res->effective_date_time_range, "EFFECTIVE_DATE_TIME_RANGE", r );
     get_value_or_throw( & res->page_size, "PAGE_SIZE", r );
     get_value_or_throw( & res->page_number, "PAGE_NUMBER", r );
-    ::lang_tools::parser::get_value_or_throw( & res->lang, "LANG", r );
+    ::lang_tools_protocol::parser::get_value_or_throw( & res->lang, "LANG", r );
 }
 
 void get_value_or_throw( GetReminderStatusResponse * res, const generic_request::Request & r )
@@ -115,7 +115,7 @@ void get_value_or_throw( FindContactsRequest * res, const generic_request::Reque
     get_value_or_throw( & res->search_filter, "SEARCH_FILTER", r );
     get_value_or_throw( & res->page_size, "PAGE_SIZE", r );
     get_value_or_throw( & res->page_number, "PAGE_NUMBER", r );
-    ::lang_tools::parser::get_value_or_throw( & res->lang, "LANG", r );
+    ::lang_tools_protocol::parser::get_value_or_throw( & res->lang, "LANG", r );
 }
 
 void get_value_or_throw( FindContactsResponse * res, const generic_request::Request & r )
@@ -133,7 +133,7 @@ void get_value_or_throw( GetContactRequest * res, const generic_request::Request
     ::persek_protocol::parser::get_value_or_throw( static_cast<persek_protocol::Request*>( res ), r );
 
     get_value_or_throw( & res->contact_id, "CONTACT_ID", r );
-    ::lang_tools::parser::get_value_or_throw( & res->lang, "LANG", r );
+    ::lang_tools_protocol::parser::get_value_or_throw( & res->lang, "LANG", r );
 }
 
 void get_value_or_throw( GetContactResponse * res, const generic_request::Request & r )

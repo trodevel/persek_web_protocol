@@ -1,5 +1,5 @@
-#ifndef APG_PERSEK_WEB__PROTOCOL_H
-#define APG_PERSEK_WEB__PROTOCOL_H
+#ifndef APG_PERSEK_WEB_PROTOCOL__PROTOCOL_H
+#define APG_PERSEK_WEB_PROTOCOL__PROTOCOL_H
 
 // system includes
 #include <vector>
@@ -36,7 +36,7 @@ struct Reminder
     basic_objects::LocalTime effective_time;
     uint32_t             remind_period;
     std::map<std::string, std::string> params    ;
-    std::map<dtmf_tools::tone_e, persek_protocol::ReminderAction> actions   ;
+    std::map<dtmf_tools_protocol::tone_e, persek_protocol::ReminderAction> actions   ;
     persek_protocol::ReminderOptions options   ;
 };
 
@@ -80,7 +80,7 @@ struct GetReminderStatusRequest: public persek_protocol::Request
 {
     enum
     {
-        message_id = 34933372
+        message_id = 1552754798
     };
 
     uint32_t             user_id   ;
@@ -88,7 +88,7 @@ struct GetReminderStatusRequest: public persek_protocol::Request
     basic_objects::LocalTimeRange effective_date_time_range;
     uint32_t             page_size ;
     uint32_t             page_number;
-    lang_tools::lang_e   lang      ;
+    lang_tools_protocol::lang_e lang      ;
 };
 
 // Message
@@ -96,7 +96,7 @@ struct GetReminderStatusResponse: public generic_protocol::BackwardMessage
 {
     enum
     {
-        message_id = 121715388
+        message_id = 4104573910
     };
 
     uint32_t             total_size;
@@ -108,14 +108,14 @@ struct FindContactsRequest: public persek_protocol::Request
 {
     enum
     {
-        message_id = 1599063005
+        message_id = 999221048
     };
 
     uint32_t             user_id   ;
     std::string          search_filter;
     uint32_t             page_size ;
     uint32_t             page_number;
-    lang_tools::lang_e   lang      ;
+    lang_tools_protocol::lang_e lang      ;
 };
 
 // Message
@@ -123,7 +123,7 @@ struct FindContactsResponse: public generic_protocol::BackwardMessage
 {
     enum
     {
-        message_id = 2798514955
+        message_id = 1992893656
     };
 
     uint32_t             total_size;
@@ -135,11 +135,11 @@ struct GetContactRequest: public persek_protocol::Request
 {
     enum
     {
-        message_id = 3048955191
+        message_id = 869407577
     };
 
     uint32_t             contact_id;
-    lang_tools::lang_e   lang      ;
+    lang_tools_protocol::lang_e lang      ;
 };
 
 // Message
@@ -147,7 +147,7 @@ struct GetContactResponse: public generic_protocol::BackwardMessage
 {
     enum
     {
-        message_id = 3875015923
+        message_id = 1282681322
     };
 
     Contact              contact   ;
@@ -158,7 +158,7 @@ struct AddReminderRequest: public persek_protocol::Request
 {
     enum
     {
-        message_id = 1716890514
+        message_id = 3436809867
     };
 
     uint32_t             contact_phone_id;
@@ -170,7 +170,7 @@ struct AddReminderResponse: public generic_protocol::BackwardMessage
 {
     enum
     {
-        message_id = 1083684194
+        message_id = 609653127
     };
 
     uint32_t             job_id    ;
@@ -181,7 +181,7 @@ struct ModifyReminderRequest: public persek_protocol::Request
 {
     enum
     {
-        message_id = 4170784810
+        message_id = 3885213587
     };
 
     uint32_t             job_id    ;
@@ -194,7 +194,7 @@ struct ModifyReminderResponse: public generic_protocol::BackwardMessage
 {
     enum
     {
-        message_id = 2243117655
+        message_id = 923878392
     };
 };
 
@@ -203,7 +203,7 @@ struct GetReminderRequest: public persek_protocol::Request
 {
     enum
     {
-        message_id = 162063050
+        message_id = 2737096659
     };
 
     uint32_t             job_id    ;
@@ -214,7 +214,7 @@ struct GetReminderResponse: public generic_protocol::BackwardMessage
 {
     enum
     {
-        message_id = 625512941
+        message_id = 1099543816
     };
 
     uint32_t             contact_id;
@@ -225,5 +225,5 @@ struct GetReminderResponse: public generic_protocol::BackwardMessage
 
 } // namespace persek_web_protocol
 
-#endif // APG_PERSEK_WEB__PROTOCOL_H
+#endif // APG_PERSEK_WEB_PROTOCOL__PROTOCOL_H
 

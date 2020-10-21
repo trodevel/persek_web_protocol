@@ -28,7 +28,7 @@ class Reminder
     public $effective_time      ; // type: basic_objects\LocalTime
     public $remind_period       ; // type: uint32_t
     public $params              ; // type: map<string, string>
-    public $actions             ; // type: map<dtmf_tools\tone_e, persek_protocol\ReminderAction>
+    public $actions             ; // type: map<dtmf_tools_protocol\tone_e, persek_protocol\ReminderAction>
     public $options             ; // type: persek_protocol\ReminderOptions
 };
 
@@ -75,14 +75,14 @@ class GetReminderStatusRequest extends \persek_protocol\Request
         parent::__construct();
     }
 
-    const MESSAGE_ID = 34933372;
+    const MESSAGE_ID = 1552754798;
 
     public $user_id             ; // type: uint32_t
     public $search_filter       ; // type: string
     public $effective_date_time_range; // type: basic_objects\LocalTimeRange
     public $page_size           ; // type: uint32_t
     public $page_number         ; // type: uint32_t
-    public $lang                ; // type: lang_tools\lang_e
+    public $lang                ; // type: lang_tools_protocol\lang_e
 };
 
 // Message
@@ -93,7 +93,7 @@ class GetReminderStatusResponse extends \generic_protocol\BackwardMessage
         parent::__construct();
     }
 
-    const MESSAGE_ID = 121715388;
+    const MESSAGE_ID = 4104573910;
 
     public $total_size          ; // type: uint32_t
     public $statuses            ; // type: array<ReminderStatus>
@@ -107,13 +107,13 @@ class FindContactsRequest extends \persek_protocol\Request
         parent::__construct();
     }
 
-    const MESSAGE_ID = 1599063005;
+    const MESSAGE_ID = 999221048;
 
     public $user_id             ; // type: uint32_t
     public $search_filter       ; // type: string
     public $page_size           ; // type: uint32_t
     public $page_number         ; // type: uint32_t
-    public $lang                ; // type: lang_tools\lang_e
+    public $lang                ; // type: lang_tools_protocol\lang_e
 };
 
 // Message
@@ -124,7 +124,7 @@ class FindContactsResponse extends \generic_protocol\BackwardMessage
         parent::__construct();
     }
 
-    const MESSAGE_ID = 2798514955;
+    const MESSAGE_ID = 1992893656;
 
     public $total_size          ; // type: uint32_t
     public $contacts            ; // type: array<Contact>
@@ -138,10 +138,10 @@ class GetContactRequest extends \persek_protocol\Request
         parent::__construct();
     }
 
-    const MESSAGE_ID = 3048955191;
+    const MESSAGE_ID = 869407577;
 
     public $contact_id          ; // type: uint32_t
-    public $lang                ; // type: lang_tools\lang_e
+    public $lang                ; // type: lang_tools_protocol\lang_e
 };
 
 // Message
@@ -152,7 +152,7 @@ class GetContactResponse extends \generic_protocol\BackwardMessage
         parent::__construct();
     }
 
-    const MESSAGE_ID = 3875015923;
+    const MESSAGE_ID = 1282681322;
 
     public $contact             ; // type: Contact
 };
@@ -165,7 +165,7 @@ class AddReminderRequest extends \persek_protocol\Request
         parent::__construct();
     }
 
-    const MESSAGE_ID = 1716890514;
+    const MESSAGE_ID = 3436809867;
 
     public $contact_phone_id    ; // type: uint32_t
     public $reminder            ; // type: Reminder
@@ -179,7 +179,7 @@ class AddReminderResponse extends \generic_protocol\BackwardMessage
         parent::__construct();
     }
 
-    const MESSAGE_ID = 1083684194;
+    const MESSAGE_ID = 609653127;
 
     public $job_id              ; // type: uint32_t
 };
@@ -192,7 +192,7 @@ class ModifyReminderRequest extends \persek_protocol\Request
         parent::__construct();
     }
 
-    const MESSAGE_ID = 4170784810;
+    const MESSAGE_ID = 3885213587;
 
     public $job_id              ; // type: uint32_t
     public $contact_phone_id    ; // type: uint32_t
@@ -207,7 +207,7 @@ class ModifyReminderResponse extends \generic_protocol\BackwardMessage
         parent::__construct();
     }
 
-    const MESSAGE_ID = 2243117655;
+    const MESSAGE_ID = 923878392;
 };
 
 // Message
@@ -218,7 +218,7 @@ class GetReminderRequest extends \persek_protocol\Request
         parent::__construct();
     }
 
-    const MESSAGE_ID = 162063050;
+    const MESSAGE_ID = 2737096659;
 
     public $job_id              ; // type: uint32_t
 };
@@ -231,7 +231,7 @@ class GetReminderResponse extends \generic_protocol\BackwardMessage
         parent::__construct();
     }
 
-    const MESSAGE_ID = 625512941;
+    const MESSAGE_ID = 1099543816;
 
     public $contact_id          ; // type: uint32_t
     public $contact_phone_id    ; // type: uint32_t
@@ -239,7 +239,7 @@ class GetReminderResponse extends \generic_protocol\BackwardMessage
     public $reminder            ; // type: Reminder
 };
 
-# namespace_end persek_web_protocol
+// namespace_end persek_web_protocol
 
 
 ?>
